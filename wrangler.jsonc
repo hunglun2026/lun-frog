@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "frog-explorer",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-01-01",
+  "observability": { "enabled": true },
+  // 網頁（public/）都是靜態檔；/report 與 /admin/* 先進程式，其餘交給 ASSETS。沒有資料庫：資料在 public/data/*.json，由 super-opendata-edu 產生
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/report", "/admin/*"], "html_handling": "auto-trailing-slash" },
+  // 網址一律用 frog.hunglun.com（Steve 2026-10-21：不要 dev 網址）。自訂網域用帳號層級 API 綁一次，不寫 routes（token 沒有網域層級 Workers Routes 權限）
+  "workers_dev": false,
+  "preview_urls": false,
+  // 每月 1 日台灣 03:00（UTC 前一天 19:00）檢查 data.gov.tw 有沒有更新，有就 ntfy 通知（整理資料在本機跑）
+  "triggers": { "crons": ["0 19 1 * *"] },
+  "vars": { "APP_VERSION": "0.1.0", "SITE_NAME": "兩棲探險家", "SITE_URL": "https://frog.hunglun.com" }
+  // secrets（cf secret bulk，不要用管線）：NTFY_TOPIC、ADMIN_TOKEN
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>溪流地圖｜兩棲探險家</title>
+<meta name="description" content="在臺灣地圖上看水利署的兩棲類調查樣點：選流域看那裡記錄到哪些蛙，或找出離你最近的調查樣點。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/fonts.css?v=1">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="stylesheet" href="/css/site.css?v=1">
+</head>
+<body data-page="map">
+<main>
+  <h1>🗺️ 溪流地圖</h1>
+  <p class="lead">每個點是水利署做河川調查的地方。選一個流域，看看那裡記錄到哪些兩棲類；也可以選一種蛙，看牠出現在哪裡。按「找我附近的」會用這台裝置的位置找最近的調查樣點（位置只在這台裝置上計算，不會傳出去）。</p>
+  <div class="form-row">
+    <label>流域<select id="basin" class="inline"><option value="">全部流域</option></select></label>
+    <label>兩棲類<select id="sp" class="inline"><option value="">全部種類</option></select></label>
+    <button class="btn" id="locate" type="button">📍 找我附近的</button>
+  </div>
+  <p id="count" class="lead" aria-live="polite"></p>
+  <div class="mapwrap"><div id="mapbox"></div><div class="near" id="list"></div></div>
+</main>
+<script src="/js/site.js?v=1"></script>
+<script src="/js/core/app.js?v=1"></script>
+<script src="/js/core/layout.js?v=1"></script>
+<script src="/js/core/fx.js?v=1"></script>
+<script src="/js/zhuyin.js?v=1"></script>
+<script src="/js/core/progress.js?v=1"></script>
+<script src="/js/p-map.js?v=1"></script>
+</body>
+</html>

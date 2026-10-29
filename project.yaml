@@ -1,0 +1,16 @@
+# 兩棲探險家：oe init --preset frog 複製成網站資料夾的 project.yaml
+名稱: 兩棲探險家
+代號: frog
+網址: https://frog.hunglun.com
+schema: frog
+轉接器: wra_amphibians
+批次大小: 16
+資料集:
+  - {id: "25771", 存檔名: frogs, 格式: JSON}   # 經濟部水利署 兩棲類調查資料（河川情勢調查，6,683 筆紀錄）
+快取: D:\lun-frog-cache   # 照片原圖（可重抓，不放 ClaudeOnly）
+# 發布（scripts/publish-public.sh、scripts/cfenv.sh 讀這幾行）
+發布repo: hunglun2026/lun-frog
+憑證名稱: hunglun2026            # steve0802\cf-tokens.txt 與 gh-tokens.txt 的鍵（gh 用「<名稱>-workflow」那把，能推 .github）
+Cloudflare帳號編號: d286dc43743f9a5e5dea99efea359ee5
+Worker名稱: frog-explorer
+網域: frog.hunglun.com

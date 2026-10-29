@@ -1,0 +1,57 @@
+/* 兩棲探險家：配色與這一站專屬的樣式。通用樣式在 /css/base.css（工具產生，不要手改）。
+   變數名稱沿用通用核心（--green 是主色、--orange 是強調色），這裡只換數值：溪水綠＋蛙黃。 */
+:root{
+  --bg:#f2f8f5;--card:#fff;--ink:#1c2d27;--ink2:#53675f;--line:#cfe3da;
+  --green:#22795a;--green-d:#165840;--green-l:#def1e8;--orange:#d98a0b;--orange-l:#fdf1d8;
+  --shadow:0 3px 0 rgba(20,60,45,.12),0 8px 24px rgba(20,60,45,.08);--photo-bg:#e9f2ee;
+}
+.hero,.w-hero{background:linear-gradient(135deg,#def1e8,#fdf1d8 60%,#e3f0f6)}
+
+/* 卡片上的科別與常見程度標籤 */
+.tbadge{display:inline-block;border-radius:999px;padding:0 9px;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap}
+.ubadge{display:inline-block;border:2px solid var(--line);background:#fff;border-radius:999px;padding:0 8px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.acard .meta{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+select.inline{width:auto;max-width:none;min-height:40px;padding:4px 10px}
+.fact.intro .one{font-weight:800;font-size:1.15rem;margin-bottom:.4em}
+.hints{margin:0 0 12px;padding-left:1.2em}
+.hints li{margin:.2em 0}
+
+/* 詳細介紹：12 個月的紀錄筆數長條 */
+.mbars{display:flex;align-items:flex-end;gap:4px;height:92px;max-width:420px;padding-top:4px}
+.mbars .mb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.mbars .mb i{display:block;width:100%;min-height:2px;background:#9fd0b9;border-radius:4px 4px 0 0}
+.mbars .mb.top i{background:var(--green)}
+.mbars .mb em{font-style:normal;font-size:.72rem;color:var(--ink2);margin-top:2px}
+
+/* 幾月遇得到：月份按鈕、卡片上的 12 格月份條 */
+.months{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.mstrip{display:inline-flex;gap:2px;vertical-align:middle}
+.mstrip i{display:block;width:9px;height:12px;border-radius:2px;background:#e1e7e4}
+.mstrip i.l1{background:#9fd0b9}
+.mstrip i.l2{background:var(--green)}
+.mstrip i.now{outline:2px solid var(--ink);outline-offset:1px}
+.acard .mstrip{display:flex;margin:6px 0 2px}
+.bl{display:inline-block;border-radius:999px;padding:0 9px;font-size:.78rem;font-weight:800;margin-top:2px}
+.bl.full{background:var(--green);color:#fff}
+.bl.some{background:var(--green-l);color:var(--green-d)}
+.legend{font-size:.85rem;color:var(--ink2);margin:14px 0}
+.legend .mstrip{margin:0 2px 0 8px}
+a.acard{text-decoration:none}
+
+/* 溪流地圖（/map）：照古蹟探險家 */
+.form-row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:8px 0}
+.form-row label{display:flex;gap:6px;align-items:center;font-weight:700}
+.mapwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start}
+.map{width:100%;height:auto;background:#e3f0f6;border-radius:var(--radius);border:3px solid var(--line);touch-action:manipulation}
+.map .land{fill:#eef3e2;stroke:#a9bb98;stroke-width:1}
+.map .dot{fill:#2b8fb8;stroke:#fff;stroke-width:.8;cursor:pointer;opacity:.75}
+.map .dot.dim{opacity:.15}
+.map .dot.on{fill:var(--orange);stroke:#000;stroke-width:1.2;opacity:1}
+.map .me{fill:#d6336c;stroke:#fff;stroke-width:2}
+.near{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.nrow{display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:8px;text-align:left;font:inherit}
+.nrow:hover{border-color:var(--green)}
+.nrow .photo,.nrow .ph{flex:none;width:72px;height:54px;border-radius:10px;object-fit:cover;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:1.6rem;background:var(--photo-bg)}
+.nrow.site{cursor:pointer}
+.nrow .ico{font-size:1.6rem;flex:none;width:40px;text-align:center}
+@media (max-width:760px){.mapwrap{grid-template-columns:1fr}.near{max-height:none}}

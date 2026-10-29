@@ -1,0 +1,15 @@
+# 由 super-opendata-edu 的 site_template 產生（oe build 會覆蓋），不要在網站資料夾改。
+# 靜態檔快取（Cloudflare Workers 靜態資源會讀這個檔）。HTML 不在這裡設定，維持每次都問有沒有新版。
+# 字型檔名帶內容雜湊；照片、資料網址帶 ?v=資料版本（meta.json 的 version），內容一變網址就變，可以放心長快取。
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/img/p/*
+  Cache-Control: public, max-age=31536000, immutable
+# CSS／JS 網址帶 ?v=N（改了要全站升版）
+/css/*
+  Cache-Control: public, max-age=86400
+/js/*
+  Cache-Control: public, max-age=86400
+# meta.json 前端用 no-cache 讀（拿版本號），其他資料帶版本號
+/data/*
+  Cache-Control: public, max-age=86400

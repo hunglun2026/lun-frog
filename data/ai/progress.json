@@ -1,0 +1,49 @@
+{
+ "batches": [
+  {
+   "no": 1,
+   "ids": [
+    "fejervarya-limnocharis",
+    "duttaphrynus-melanostictus",
+    "buergeria-japonica",
+    "bufo-bankorensis",
+    "hylarana-latouchii",
+    "sylvirana-guentheri",
+    "microhyla-fissipes",
+    "buergeria-robusta",
+    "kurixalus-idiootocus",
+    "rhacophorus-moltrechti",
+    "polypedates-megacephalus",
+    "odorrana-swinhoana",
+    "rana-adenopleura",
+    "microhyla-heymonsi",
+    "polypedates-braueri",
+    "rana-sauteri"
+   ],
+   "started": "2026-10-29 17:38",
+   "done": "2026-10-29 17:39"
+  },
+  {
+   "no": 2,
+   "ids": [
+    "limnonectes-kuhlii",
+    "hoplobatrachus-rugulosus",
+    "hyla-chinensis",
+    "kurixalus-eiffingeri",
+    "buergeria-otai",
+    "microhyla-butleri",
+    "rana-longicrus",
+    "rhacophorus-taipeianus",
+    "pelophylax-fukienensis",
+    "hynobius-formosanus",
+    "rhacophorus-prasinatus",
+    "rhacophorus-arvalis",
+    "micryletta-steinegeri",
+    "kaloula-pulchra",
+    "rana-catesbeiana"
+   ],
+   "started": "2026-10-29 17:39",
+   "done": "2026-10-29 17:40"
+  }
+ ]
+}

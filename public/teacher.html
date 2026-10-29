@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>教師專區｜兩棲探險家</title>
+<meta name="description" content="依科或流域一鍵產生兩棲類學習單（國小低中高年級），附答案；還有全班搶答的計分板與倒數計時器。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/fonts.css?v=1">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="stylesheet" href="/css/site.css?v=1">
+</head>
+<body data-page="teacher">
+<main>
+  <h1>🍎 教師專區</h1>
+  <p class="lead noprint">學習單依頁首的「年級」產生，內容只用水利署調查資料裡的事實。搶答時可以投影「蛙蛙分類」的遊戲，全班一起答。</p>
+  <div class="tabs noprint" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="sheet">🖨️ 學習單</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="board">🏆 搶答計分板</button>
+  </div>
+  <section id="tab-sheet" class="panel">
+    <div class="form-row noprint">
+      <label>範圍<select id="scope" class="inline"></select></label>
+      <label>題數<select id="n" class="inline"><option>4</option><option selected>6</option><option>8</option></select></label>
+      <button class="btn primary" id="make" type="button">產生學習單</button>
+      <button class="btn" id="print" type="button" hidden>列印</button>
+      <label><input type="checkbox" id="key"> 顯示答案</label>
+    </div>
+    <div id="sheet" class="sheet" hidden></div>
+  </section>
+  <section id="tab-board" class="panel" hidden></section>
+</main>
+<script src="/js/site.js?v=1"></script>
+<script src="/js/core/app.js?v=1"></script>
+<script src="/js/core/layout.js?v=1"></script>
+<script src="/js/core/fx.js?v=1"></script>
+<script src="/js/zhuyin.js?v=1"></script>
+<script src="/js/core/progress.js?v=1"></script>
+<script src="/js/core/board.js?v=1"></script>
+<script src="/js/p-teacher.js?v=1"></script>
+</body>
+</html>

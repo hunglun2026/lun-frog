@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>兩棲探險家｜認識臺灣溪流的 31 種兩棲類</title>
+<meta name="description" content="用經濟部水利署河川調查的開放資料，認識臺灣溪流記錄到的 31 種兩棲類：樹蛙、赤蛙、蟾蜍、山椒魚。國小低中高年級三種程度，看哪個月遇得到、在溪流地圖找家鄉的蛙，還有分類遊戲和學習單。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/fonts.css?v=1">
+<link rel="stylesheet" href="/css/base.css?v=1">
+<link rel="stylesheet" href="/css/site.css?v=1">
+</head>
+<body data-page="home">
+<main>
+  <section class="w-hero">
+    <div class="w-floats" aria-hidden="true"><span>🐸</span><span>🌿</span><span>💧</span><span>🍃</span><span>🐸</span><span>🌱</span><span>🏞️</span><span>🦎</span></div>
+    <p class="w-eyebrow"><span>政府開放資料</span><span class="w-sep">·</span><span>國小低中高年級</span></p>
+    <h1 class="w-title"><span class="w-line">走到溪流邊</span><span class="w-line w-grad">認識 <span data-count>31</span> 種兩棲類</span><span class="w-line">看看幾月遇得到</span></h1>
+    <p class="w-sub">水利署調查員在臺灣 25 個流域記錄了好多青蛙和蟾蜍。<br>不用註冊、不用安裝，打開就能上課。</p>
+    <p class="w-cta-row"><a class="btn primary big" href="#start">從這裡開始 🐸</a> <a class="btn big" href="/teacher">我是老師</a> <a class="btn big" href="/help">📘 使用說明</a></p>
+  </section>
+  <!-- 引導入口：回答兩題（身分、年級），推薦從哪裡開始。程式在 p-home.js，選過的會記在這台裝置。
+       首頁不整頁加注音（zhuyin.js），只有標 zy 的加：「學生」只在低年級，zy-always 不論年級（還沒選年級的小一生也要看得懂） -->
+  <section class="w-guide" id="start" aria-labelledby="g-title">
+    <h2 id="g-title"><span class="nobr">不知道從哪裡開始？</span><span class="nobr">回答兩個問題</span></h2>
+    <p class="lead"><span class="nobr">選完會推薦最適合的工具，</span><span class="nobr">年級也會自動設好。</span></p>
+    <div class="g-step" data-step="who">
+      <p class="g-q"><small>第 1 題，共 2 題</small>你是…</p>
+      <div class="g-opts">
+        <button class="g-opt" type="button" data-who="student"><span class="e" aria-hidden="true">🎒</span><b class="zy">學生</b><small>自己找蛙、玩遊戲、蒐集徽章</small></button>
+        <button class="g-opt" type="button" data-who="teacher"><span class="e" aria-hidden="true">🍎</span><b>老師</b><small>上課投影、印學習單、全班搶答</small></button>
+      </div>
+    </div>
+    <div class="g-step" data-step="lv" hidden>
+      <p class="g-q"><small class="zy zy-always">第 2 題，共 2 題</small><span id="g-lvq" class="zy zy-always">你幾年級？</span></p>
+      <div class="g-opts">
+        <button class="g-opt" type="button" data-lv="e"><span class="e" aria-hidden="true">🌱</span><b class="zy zy-always">低年級</b><small>有注音，三選一，附白話介紹</small></button>
+        <button class="g-opt" type="button" data-lv="j"><span class="e" aria-hidden="true">📗</span><b class="zy zy-always">中年級</b><small>三選一，附白話介紹</small></button>
+        <button class="g-opt" type="button" data-lv="s"><span class="e" aria-hidden="true">🎓</span><b class="zy zy-always">高年級</b><small>四選一，可以讀原文</small></button>
+      </div>
+      <div class="g-nav"><button class="btn" type="button" data-back>← 上一步</button></div>
+    </div>
+    <div class="g-step" data-step="done" hidden>
+      <p class="g-q"><small>推薦給你</small><span class="g-who" id="g-who"></span></p>
+      <div class="cards g-recs" id="g-recs"></div>
+      <div class="g-nav"><button class="btn" type="button" data-reset>重新選擇</button> <a class="btn" href="/help">📘 看使用說明</a></div>
+    </div>
+  </section>
+  <section class="w-stats" aria-label="收錄數量">
+    <div class="w-stat w-reveal"><b class="w-num" data-w="count">31</b><span>種兩棲類</span></div>
+    <div class="w-stat w-reveal" style="--delay:1"><b class="w-num" data-w="records">6681</b><span>筆調查紀錄</span></div>
+    <div class="w-stat w-reveal" style="--delay:2"><b class="w-num" data-w="basins">25</b><span>個流域</span></div>
+    <div class="w-stat w-reveal" style="--delay:3"><b class="w-num" data-w="families">7</b><span>個科</span></div>
+  </section>
+  <h2 class="w-reveal">今天的兩棲類</h2>
+  <p class="lead">每次打開都會換一批，點一下看介紹。</p>
+  <div class="grid" id="today"></div>
+  <h2 class="w-reveal">六個學習工具</h2>
+  <div class="cards">
+    <a class="tool w-reveal" href="/frogs"><div class="ico">📖</div><h3>兩棲小百科</h3><p>照片、白話介紹、學名、科別，在哪些溪流記錄到，還能挑兩種比一比。</p><span class="tag">認識兩棲類</span></a>
+    <a class="tool w-reveal" style="--delay:2" href="/season"><div class="ico">📅</div><h3>幾月遇得到</h3><p>選月份，看水利署在那個月記錄到哪些蛙。</p><span class="tag">季節觀察</span></a>
+    <a class="tool w-reveal" style="--delay:3" href="/classify"><div class="ico">🧩</div><h3>蛙蛙分類</h3><p>赤蛙科、樹蛙科、蟾蜍科分一分，比比看誰的紀錄比較多。</p><span class="tag">觀察分類</span></a>
+    <a class="tool w-reveal" href="/map"><div class="ico">🗺️</div><h3>溪流地圖</h3><p>選流域看那裡有哪些蛙，或找出離你最近的調查樣點。</p><span class="tag">鄉土探索</span></a>
+    <a class="tool w-reveal" style="--delay:2" href="/passport"><div class="ico">🎫</div><h3>探險護照</h3><p>看過的兩棲類會蓋章，玩遊戲拿星星換徽章。</p><span class="tag">自主學習</span></a>
+    <a class="tool w-reveal" style="--delay:3" href="/teacher"><div class="ico">🍎</div><h3>教師專區</h3><p>依科或流域產生學習單，還有搶答計分板。</p><span class="tag">備課好幫手</span></a>
+  </div>
+  <section class="w-end w-reveal"><h2>來認識溪流邊的兩棲類吧</h2><p><a class="btn primary big" href="/frogs">打開兩棲小百科 🐸</a></p></section>
+  <dialog id="dlg"><div class="dlg-in" id="dlg-body"></div></dialog>
+</main>
+<script src="/js/site.js?v=1"></script>
+<script src="/js/core/app.js?v=1"></script>
+<script src="/js/core/layout.js?v=1"></script>
+<script src="/js/core/fx.js?v=1"></script>
+<script src="/js/zhuyin.js?v=1"></script>
+<script src="/js/core/progress.js?v=1"></script>
+<script src="/js/p-home.js?v=1"></script>
+</body>
+</html>
