@@ -11,6 +11,6 @@
   "preview_urls": false,
   // 每月 1 日台灣 03:00（UTC 前一天 19:00）檢查 data.gov.tw 有沒有更新，有就 ntfy 通知（整理資料在本機跑）
   "triggers": { "crons": ["0 19 1 * *"] },
-  "vars": { "APP_VERSION": "0.1.0", "SITE_NAME": "兩棲探險家", "SITE_URL": "https://frog.hunglun.com" }
+  "vars": { "APP_VERSION": "0.1.2", "SITE_NAME": "兩棲探險家", "SITE_URL": "https://frog.hunglun.com" }
   // secrets（cf secret bulk，不要用管線）：NTFY_TOPIC、ADMIN_TOKEN
 }
